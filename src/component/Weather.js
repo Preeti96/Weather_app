@@ -1,0 +1,35 @@
+import React, { Component } from "react";
+
+export default class Weather extends Component {
+  render() {
+    // console.log("Props", this.props);
+    return <div>
+       {
+           this.props.city && this.props.country && <p className='weather__key'>Location: 
+           <span className='weather__value'> {this.props.city},{this.props.country}</span>
+           </p>
+           }
+        {
+            this.props.temperature && <p className='weather__key'> Temperature: 
+            <span className='weather__value'> {this.props.temperature}</span>
+            </p>
+            }
+        {
+            this.props.humidity && <p className='weather__key'> Humidity: 
+            <span className='weather__value'> {this.props.humidity}</span>
+            </p>
+            }
+        {
+            this.props.description && <p className='weather__key'> Condition: 
+            <span className='weather__value'> {this.props.description}</span>
+            </p>
+            }
+        {
+            this.props.error && 
+            <p className='weather__error'>
+            {this.props.error}
+            </p>
+            }
+    </div>;
+  }
+}
